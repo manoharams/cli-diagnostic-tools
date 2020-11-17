@@ -17,6 +17,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	edgegrid "github.com/akamai/AkamaiOPEN-edgegrid-golang"
 	"github.com/fatih/color"
@@ -85,7 +86,14 @@ func init() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"/.edgerc", edgercPathFlagDescription)
+	fmt.Println("home directory " + home)
+	fmt.Println("For windows " + home + "/.edgerc")
+	fmt.Println("For mac and linux " + home + "\\.edgerc")
+	if strings.Contains(home, "/") {
+		rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"/.edgerc", edgercPathFlagDescription)
+	} else {
+		rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"\\.edgerc", edgercPathFlagDescription)
+	}
 	rootCmd.PersistentFlags().StringVar(&edgercSection, "section", "diagnostics", edgercSectionFlagDescription)
 	rootCmd.PersistentFlags().BoolVar(&forceColorFlag, "force-color", false, forceColorFlagDescription)
 	rootCmd.PersistentFlags().BoolVarP(&jsonString, "json", "", false, jsonFlagDescription)
