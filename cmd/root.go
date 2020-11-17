@@ -19,6 +19,8 @@ import (
 	"os"
 	"strings"
 
+	"runtime"
+
 	edgegrid "github.com/akamai/AkamaiOPEN-edgegrid-golang"
 	"github.com/fatih/color"
 	homedir "github.com/mitchellh/go-homedir"
@@ -89,9 +91,12 @@ func init() {
 	fmt.Println("home directory " + home)
 	fmt.Println("For windows " + home + "/.edgerc")
 	fmt.Println("For mac and linux " + home + "\\.edgerc")
+	fmt.Println("Machine " + runtime.GOOS)
 	if strings.Contains(home, "/") {
+		fmt.Println("mac or linux")
 		rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"/.edgerc", edgercPathFlagDescription)
 	} else {
+		fmt.Println("windows")
 		rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"\\.edgerc", edgercPathFlagDescription)
 	}
 	rootCmd.PersistentFlags().StringVar(&edgercSection, "section", "diagnostics", edgercSectionFlagDescription)
