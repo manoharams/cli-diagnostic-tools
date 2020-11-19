@@ -17,7 +17,6 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"strings"
 
 	"runtime"
 
@@ -88,16 +87,10 @@ func init() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println("home directory " + home)
-	fmt.Println("For windows " + home + "/.edgerc")
-	fmt.Println("For mac and linux " + home + "\\.edgerc")
-	fmt.Println("Machine " + runtime.GOOS)
-	if strings.Contains(home, "/") {
-		fmt.Println("mac or linux")
-		rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"/.edgerc", edgercPathFlagDescription)
-	} else {
-		fmt.Println("windows")
+	if runtime.GOOS == "windows" {
 		rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"\\.edgerc", edgercPathFlagDescription)
+	} else {
+		rootCmd.PersistentFlags().StringVar(&edgercPath, "edgerc", home+"/.edgerc", edgercPathFlagDescription)
 	}
 	rootCmd.PersistentFlags().StringVar(&edgercSection, "section", "diagnostics", edgercSectionFlagDescription)
 	rootCmd.PersistentFlags().BoolVar(&forceColorFlag, "force-color", false, forceColorFlagDescription)
