@@ -16,8 +16,8 @@ package cmd
 
 //root
 const (
-	rootShortDescription = "The Diagnostic Tools CLI allows you to diagnose server, ESI, DNS, and network issues Akamai customers experience when delivering content to their end users. Update Version."
-	rootLongDescription  = `The Diagnostic Tools CLI allows you to diagnose server, ESI, DNS, and network issues Akamai customers experience when delivering content to their end users Update Version.
+	rootShortDescription = "The Diagnostic Tools CLI allows you to diagnose server, ESI, DNS, and network issues Akamai customers experience when delivering content to their end users. Test"
+	rootLongDescription  = `The Diagnostic Tools CLI allows you to diagnose server, ESI, DNS, and network issues Akamai customers experience when delivering content to their end users Test
 
     Run the process in background, 
     linux : redirect the output to a textfile and use ampersand &
@@ -106,8 +106,8 @@ const (
 
 //dig
 const (
-	digShortDescription = "Runs DIG on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution. Updated Description"
-	digLongDescription  = `Runs the DIG command on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution. Updated Description`
+	digShortDescription = "Runs DIG on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution. Test"
+	digLongDescription  = `Runs the DIG command on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution. Test`
 
 	typeDigFlagDescription = "The type of the DNS record; possible values are: A, AAAA, CNAME, MX, NS, PTR, or SOA."
 
