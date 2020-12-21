@@ -106,8 +106,8 @@ const (
 
 //dig
 const (
-	digShortDescription = "Runs DIG on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution."
-	digLongDescription  = `Runs the DIG command on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution.`
+	digShortDescription = "Runs DIG on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution. Updated Description"
+	digLongDescription  = `Runs the DIG command on a hostname or a domain name to return DNS details for the location of an Akamai edge server and the hostname or the domain name. You can use it to diagnose issues with the DNS resolution. Updated Description`
 
 	typeDigFlagDescription = "The type of the DNS record; possible values are: A, AAAA, CNAME, MX, NS, PTR, or SOA."
 
